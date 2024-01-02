@@ -1,270 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Procode | 代码与程序教程</title>
-<meta name="description" content="Procode | 代码与程序教程" />
-<meta name="keyword" content=" python, html, css, javascript " />
-<link rel="shortcut icon" href="img/favicon.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/beantech.min.css" />
-<link rel="stylesheet" href="css/highlight.css" />
-<link rel="stylesheet" href="css/widget.css" />
-<link rel="stylesheet" href="css/rocket.css" />
-<link rel="stylesheet" href="css/signature.css" />
-<link rel="stylesheet" href="css/catalog.css" />
-<link rel="stylesheet" href="css/livemylife.css" />
-<link rel="stylesheet" href="css/wave.css" />
-<link rel="stylesheet" href="css/donate.css" />
-<link rel="stylesheet" href="css/scroll.css" />
-<link rel="stylesheet" href="css/themecolor.css" />
-<script type="text/javascript" src="js/waline.js"></script>
-<link rel="stylesheet" href="css/waline.css" />
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="css/google-icon.css" type="text/css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Procode | 代码与程序教程</title>
+    <meta name="description" content="Procode | 代码与程序教程" />
+    <meta name="keyword" content=" python, html, css, javascript " />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/beantech.min.css" />
+    <link rel="stylesheet" href="css/highlight.css" />
+    <link rel="stylesheet" href="css/widget.css" />
+    <link rel="stylesheet" href="css/rocket.css" />
+    <link rel="stylesheet" href="css/signature.css" />
+    <link rel="stylesheet" href="css/catalog.css" />
+    <link rel="stylesheet" href="css/livemylife.css" />
+    <link rel="stylesheet" href="css/wave.css" />
+    <link rel="stylesheet" href="css/donate.css" />
+    <link rel="stylesheet" href="css/scroll.css" />
+    <link rel="stylesheet" href="css/themecolor.css" />
+    <script type="text/javascript" src="js/waline.js"></script>
+    <link rel="stylesheet" href="css/waline.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/google-icon.css" type="text/css" />
+  </head>
 
-<body ontouchstart class="body--light body--dark">
-<style type="text/css">
-  .body--light {
-    --light-mode: none;
-    --dark-mode: block;
-  }
-  .body--dark {
-    --light-mode: block;
-    --dark-mode: none;
-  }
-  i.mdui-icon.material-icons.light-mode {
-    display: var(--light-mode);
-  }
-  i.mdui-icon.material-icons.dark-mode {
-    display: var(--dark-mode);
-  }
-</style>
-<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-<i class="mdui-icon material-icons light-mode"></i>
-<i class="mdui-icon material-icons dark-mode"></i>
-</div>
+  <body ontouchstart class="body--light body--dark">
+    <style type="text/css">
+      .body--light {
+        --light-mode: none;
+        --dark-mode: block;
+      }
+      .body--dark {
+        --light-mode: block;
+        --dark-mode: none;
+      }
+      i.mdui-icon.material-icons.light-mode {
+        display: var(--light-mode);
+      }
+      i.mdui-icon.material-icons.dark-mode {
+        display: var(--dark-mode);
+      }
+    </style>
+    <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+      <i class="mdui-icon material-icons light-mode"></i>
+      <i class="mdui-icon material-icons dark-mode"></i>
+    </div>
 
-<div id="huxblog_navbar">
-<div class="navbar-collapse">
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a href="about/index.html">
-关于
-</a>
-</li>
-<li>
-<a href="archive/index.html">
-归档
-</a>
-</li>
-<li>
-<a href="categories/index.html">
-分类
-</a>
-</li>
-<li>
-<a href="donate/index.html">
-捐助
-</a>
-</li>
-</ul>
-</div>
-</div>
-	
-<div id="progress">
-<div class="line" style="width: 0%;"></div>
-</div>
-<script>
-  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
-  var $body = document.body;
-  var $toggle = document.querySelector('.navbar-toggle');
-  var $navbar = document.querySelector('#huxblog_navbar');
-  var $collapse = document.querySelector('.navbar-collapse');
-
-  $toggle.addEventListener('click', handleMagic)
-
-  function handleMagic(e) {
-    if ($navbar.className.indexOf('in') > 0) {
-      // CLOSE
-      $navbar.className = " ";
-      // wait until animation end.
-      setTimeout(function() {
-        // prevent frequently toggle
-        if ($navbar.className.indexOf('in') < 0) {
-          $collapse.style.height = "0px"
-        }
-      }, 400)
-    } else {
-      // OPEN
-      $collapse.style.height = "auto"
-      $navbar.className += " in";
-    }
-  }
-</script>
-
-<style type="text/css">
-    .body--light {
-      /* intro-header */
-      --intro-header-background-image-url-home: url('img/home.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('img/home.jpg');
-    }
-    .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/home.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/home.jpg');
-    }
-
-    header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-      
-    }
-</style>
-<header class="intro-header">
-<div id="signature">
-<div class="container">
-<div class="row">
-<div class="col-lg-11 col-lg-offset-0 col-md-10 col-md-offset-1">
-<div class="site-heading">
-<h1>Procode</h1>
-<span class="subheading"><h2>Procode | 代码与程序教程</h2></span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="preview-overlay">
-<svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-<defs>
-<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-</defs>
-<g class="preview-parallax">
-<use xlink:href="#gentle-wave" x="48" y="0" fill="var(--gentle-wave1)"></use>
-<use xlink:href="#gentle-wave" x="48" y="3" fill="var(--gentle-wave2)"></use>
-<use xlink:href="#gentle-wave" x="48" y="5" fill="var(--gentle-wave3)"></use>
-<use xlink:href="#gentle-wave" x="48" y="7" fill="var(--gentle-wave)"></use>
-</g>
-</svg>
-</div>
-</header>
-<div class="container">
-<div class="row">
-
-
-<div class="col-lg-9 col-lg-offset-0 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-
-<div class="post-preview">
-<a href="python/upload/2023/12/25/installation.html">
-<h2 class="post-title">
-Python的安装
-</h2>
-<div class="post-content-preview">
-  学任何一种语言，都要从它的安装开始。下面我就来告诉大家Python如何安装。 
-</div>
-</a>
-<p class="post-meta" style="margin: 10px 0;">
-Posted by leoltsh on
-2023-12-25
-</p>
-<div class="tags">
-<a href="javascript:void(0)" title="Python">Python</a>
-</div>
-</div>
-<hr>
-<div class="col-lg-9 col-lg-offset-0 col-sm-12 col-xs-12 post-container col-md-12 col-md-offset-0">
-
-<div class="post-preview">
-<a href="python/upload/2023/12/26/print.html">
-<h2 class="post-title">
-print(“函数”)
-</h2>
-<div class="post-content-preview">
-别的教程，上来就是讲Hello World。我认为，应该先讲print()函数（至于函数是什么，等着再讲）... 
-</div>
-</a>
-<p class="post-meta" style="margin: 10px 0;">
-Posted by leoltsh on
-2023-12-26
-</p>
-<div class="tags">
-<a href="javascript:void(0)" title="Python">Python</a>
-</div>
-</div>
-</div>
-<hr>
-<ul class="pager">
-<li class="next">
-<a href="archives/2/index.html">下一页 &rarr;</a>
-</li>
-</ul>
-</div>
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-
-<div class="widget">
-<h5><a href="python/index.html">Python</a></h5>
-<ul>
-<a href="python/upload/2023/12/25/install.html">
-<li>Python的安装</li>
-</a>
-<a href="python/upload/2023/12/26/print.html">
-<li>print("函数")</li>
-</a>
-<a href="python/upload/2023/12/27/function.html">
-<li>到底是函数还是机器？</li>
-</a>
-<a href="python/upload/2023/12/27/install.html">
-<li>Windows Server 2019 OVF, updated Dec 2023 (sysin) - VMware 虚拟机模板</li>
-</a>
-<a href="python/upload/2023/12/28/install.html">
-<li>Windows Server 2019 中文版、英文版下载 (updated Dec 2023)</li>
-</a>
-</ul>
-</div>
-<hr>
-<h5><a href="archives/index.html">归档</a></h5>
-<a href="python/index.html">
-  <li>Python速成</li>
-</a>
-<hr>
-</div>
-</div>
-</div>
-<a id="rocket" href="#top" class></a>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/hux-blog.min.js"></script>
-<script async="true" type="text/javascript" src="js/catalog.js"></script>
-<script async="true" type="text/javascript" src="js/totop.js"></script>
-<script async="async" type="text/javascript" src="js/scroll.js"></script>
-<script src="js/ziploader.js"></script>
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-11 col-lg-offset-0 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted" id="copyrightYear">
-          Copyright &copy; leoltsh <span id="currentYear"></span>
-        </p>
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="about/index.html"> 关于 </a>
+          </li>
+          <li>
+            <a href="archive/index.html"> 归档 </a>
+          </li>
+          <li>
+            <a href="categories/index.html"> 分类 </a>
+          </li>
+          <li>
+            <a href="donate/index.html"> 捐助 </a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var currentYear = new Date().getFullYear();
-    document.getElementById('currentYear').textContent = currentYear;
-  });
-</script>
-</body>
+
+    <div id="progress">
+      <div class="line" style="width: 0%"></div>
+    </div>
+    <script>
+      // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+      var $body = document.body;
+      var $toggle = document.querySelector(".navbar-toggle");
+      var $navbar = document.querySelector("#huxblog_navbar");
+      var $collapse = document.querySelector(".navbar-collapse");
+
+      $toggle.addEventListener("click", handleMagic);
+
+      function handleMagic(e) {
+        if ($navbar.className.indexOf("in") > 0) {
+          // CLOSE
+          $navbar.className = " ";
+          // wait until animation end.
+          setTimeout(function () {
+            // prevent frequently toggle
+            if ($navbar.className.indexOf("in") < 0) {
+              $collapse.style.height = "0px";
+            }
+          }, 400);
+        } else {
+          // OPEN
+          $collapse.style.height = "auto";
+          $navbar.className += " in";
+        }
+      }
+    </script>
+
+    <style type="text/css">
+      .body--light {
+        /* intro-header */
+        --intro-header-background-image-url-home: url("img/home.jpg");
+        --intro-header-background-image-url-post: url("");
+        --intro-header-background-image-url-page: url("img/home.jpg");
+      }
+      .body--dark {
+        --intro-header-background-image-url-home: linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("img/home.jpg");
+        --intro-header-background-image-url-post: linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("");
+        --intro-header-background-image-url-page: linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url("img/home.jpg");
+      }
+
+      header.intro-header {
+        /*config*/
+        background-image: var(--intro-header-background-image-url-home);
+      }
+    </style>
+    <header class="intro-header">
+      <div id="signature">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-11 col-lg-offset-0 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                <h1>Procode</h1>
+                <span class="subheading"
+                  ><h2>Procode | 代码与程序教程</h2></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="preview-overlay">
+        <svg
+          class="preview-waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            ></path>
+          </defs>
+          <g class="preview-parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="var(--gentle-wave1)"
+            ></use>
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="var(--gentle-wave2)"
+            ></use>
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="var(--gentle-wave3)"
+            ></use>
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="7"
+              fill="var(--gentle-wave)"
+            ></use>
+          </g>
+        </svg>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-lg-9 col-lg-offset-0 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container"
+        >
+          <div class="post-preview">
+            <a href="python/upload/2023/12/25/installation.html">
+              <h2 class="post-title">Python的安装</h2>
+              <div class="post-content-preview">
+                学任何一种语言，都要从它的安装开始。下面我就来告诉大家Python如何安装。
+              </div>
+            </a>
+            <p class="post-meta" style="margin: 10px 0">
+              Posted by leoltsh on 2023-12-25
+            </p>
+            <div class="tags">
+              <a href="javascript:void(0)" title="Python">Python</a>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="col-lg-9 col-lg-offset-0 col-sm-12 col-xs-12 post-container col-md-12 col-md-offset-0"
+          >
+            <div class="post-preview">
+              <a href="python/upload/2023/12/26/print.html">
+                <h2 class="post-title">print(“函数”)</h2>
+                <div class="post-content-preview">
+                  别的教程，上来就是讲Hello
+                  World。我认为，应该先讲print()函数（至于函数是什么，等着再讲）...
+                </div>
+              </a>
+              <p class="post-meta" style="margin: 10px 0">
+                Posted by leoltsh on 2023-12-26
+              </p>
+              <div class="tags">
+                <a href="javascript:void(0)" title="Python">Python</a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <ul class="pager">
+            <li class="next">
+              <a href="archives/2/index.html">下一页 &rarr;</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container"
+        >
+          <div class="widget">
+            <h5><a href="python/index.html">Python</a></h5>
+            <ul>
+              <a href="python/upload/2023/12/25/install.html">
+                <li>Python的安装</li>
+              </a>
+              <a href="python/upload/2023/12/26/print.html">
+                <li>print("函数")</li>
+              </a>
+              <a href="python/upload/2023/12/27/function.html">
+                <li>到底是函数还是机器？</li>
+              </a>
+              <a href="python/upload/2023/12/27/install.html">
+                <li>
+                  Windows Server 2019 OVF, updated Dec 2023 (sysin) - VMware
+                  虚拟机模板
+                </li>
+              </a>
+              <a href="python/upload/2023/12/28/install.html">
+                <li>
+                  Windows Server 2019 中文版、英文版下载 (updated Dec 2023)
+                </li>
+              </a>
+            </ul>
+          </div>
+          <hr />
+          <h5><a href="archives/index.html">归档</a></h5>
+          <a href="python/index.html">
+            <li>Python速成</li>
+          </a>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <a id="rocket" href="#top" class></a>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hux-blog.min.js"></script>
+    <script async="true" type="text/javascript" src="js/catalog.js"></script>
+    <script async="true" type="text/javascript" src="js/totop.js"></script>
+    <script async="async" type="text/javascript" src="js/scroll.js"></script>
+    <script src="js/ziploader.js"></script>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-11 col-lg-offset-0 col-md-10 col-md-offset-1">
+            <p class="copyright text-muted" id="copyrightYear">
+              Copyright &copy; leoltsh <span id="currentYear"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+      });
+    </script>
+  </body>
 </html>

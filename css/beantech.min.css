@@ -235,7 +235,8 @@ pre code {
     border: none;
     background: white;
     box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px,
+    box-shadow:
+      rgba(0, 0, 0, 0.117647) 0 1px 6px,
       rgba(0, 0, 0, 0.239216) 0 1px 4px;
     border-radius: 2px;
     width: 170px;
@@ -629,10 +630,18 @@ footer .copyright a:focus {
   vertical-align: middle;
   vertical-align: baseline;
   opacity: 0;
-  -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-  -moz-transition: top 0.3s ease, opacity 0.3s ease;
-  -ms-transition: top 0.3s ease, opacity 0.3s ease;
-  transition: top 0.3s ease, opacity 0.3s ease;
+  -webkit-transition:
+    top 0.3s ease,
+    opacity 0.3s ease;
+  -moz-transition:
+    top 0.3s ease,
+    opacity 0.3s ease;
+  -ms-transition:
+    top 0.3s ease,
+    opacity 0.3s ease;
+  transition:
+    top 0.3s ease,
+    opacity 0.3s ease;
 }
 .floating-label-form-group::not(:first-child) {
   padding-left: 14px;
